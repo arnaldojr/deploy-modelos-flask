@@ -1,10 +1,24 @@
-# Deploy de modelos com Flask
+# Exemplo de Deploy para modelos ML utilizando Flask
 
-Este é o repositório do código do vídeo **Deploy de modelos com Flask** do Youtube do canal Let's Data.
+Este repositório é guia simples para compreender como pode ser feito o deploy de suas aplicações de ML em uma pagina Web.
 
-Link para o vídeo: https://youtu.be/_KNzvVsrB8k
+Para testar:
 
-Ao final deste vídeo você será capaz de:  
-☑️ A importância de tirar os modelos do papel  
-☑️ Criar um modelo no scikit learn  
-☑️ Integrar modelo preditivo numa aplicação Flask
+- Clone este repositório;
+- Execute o app.py com flask run 
+- abra o navegador em localhost na porta 5000. 
+- http://127.0.0.1:5000
+
+
+Pacotes python para instalar:
+
+- pip install flask, pickle, pandas, matplotlib, scikit-learn
+
+Template de paginas web grátis
+
+- https://bootstrapmade.com/
+
+
+
+Git de referência: https://youtu.be/_KNzvVsrB8k
+
