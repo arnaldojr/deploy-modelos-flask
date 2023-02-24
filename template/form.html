@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Multi Bootstrap Template - Index</title>
+    <title>Classificador de flor com ML</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -44,7 +44,7 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <h1 class="logo"><a href="/"><img src="assets/img/letstalk.png" height="200"></a></h1>
+        <h1 class="logo"><a href="/"><img src="assets/img/flor.png" height="200"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -54,8 +54,8 @@
                 <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
                 <li><a class="nav-link scrollto " href="#portfolio">Clientes</a></li>
                 <li><a class="nav-link scrollto" href="#team">Time</a></li>
-                <li><a class="nav-link scrollto" href="#about">Sobre a Let's Talk</a></li>
-                <li><a class="getstarted scrollto" href="/dados_cliente">Área Privada</a></li>
+                <li><a class="nav-link scrollto" href="#about">Quem Somos</a></li>
+                <li><a class="getstarted scrollto" href="/dados_flor">Classificador de Flores</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -72,7 +72,9 @@
             <br/><br/><br/>
             <div class="section-title">
                 <h2>MACHINE LEARNING</h2>
-                <p>Previsão de Churn</p>
+                <p>Classificação de Flores</p>
+                <br><br>
+                <h3>Por favor, forneça os dados solicitados abaixo para descobrir a espécie da flor.</h3>
             </div>
 
             <div class="row">
@@ -82,160 +84,26 @@
 
                         <table cellpadding="10" cellspacing="10">
                             <tr>
-                                <td class="col-label"><label>Tenure</label></td>
-                                <td class="col-input"><input type="text" class="form-control" name="tenure"
-                                                             placeholder="Tenure"></td>
-                                <td class="col-label"><label>MonthlyCharges</label></td>
-                                <td class="col-input"><input type="text" class="form-control" name="MonthlyCharges"
-                                                             placeholder="MonthlyCharges"></td>
+                                <td class="col-label"><label>sepal_length</label></td>
+                                <td class="col-input"><input type="text" class="form-control" name="sepal_length"
+                                                             placeholder="sepal_length"></td>
+                                <td class="col-label"><label>sepal_width</label></td>
+                                <td class="col-input"><input type="text" class="form-control" name="sepal_width"
+                                                             placeholder="sepal_width"></td>
                             </tr>
 
                             <tr>
-                                <td class="col-label"><label>TotalCharges</label></td>
-                                <td class="col-input"><input type="text" class="form-control" name="TotalCharges"
-                                                             placeholder="TotalCharges"></td>
-                                <td class="col-label"><label>Gender</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="gender">
-                                        <option value='Male'>Male</option>
-                                        <option value='Female'>Female</option>
-                                    </select></td>
+                                <td class="col-label"><label>petal_length</label></td>
+                                <td class="col-input"><input type="text" class="form-control" name="petal_length"
+                                                             placeholder="petal_length"></td>
+                                <td class="col-label"><label>petal_width</label></td>
+                                <td class="col-input"><input type="text" class="form-control" name="petal_width"
+                                                             placeholder="petal_width"></td>
                             </tr>
 
-                            <tr>
-                                <td class="col-label"><label>Senior-Citizen</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="SeniorCitizen">
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
-                                    </select></td>
-                                <td class="col-label"><label>Partner</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="Partner">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>Dependents</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="Dependents">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>PhoneService</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="PhoneService">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-
-                            <tr>
-                                <td class="col-label"><label>MultipleLines</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="MultipleLines">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                        <option value="No phone service">No phone service</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>InternetService</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="InternetService">
-                                        <option value="Fiber optic">Fiber optic</option>
-                                        <option value="DSL">DSL</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>OnlineSecurity</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="OnlineSecurity">
-                                        <option value="No internet service">No internet service</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>OnlineBackup</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="OnlineBackup">
-                                        <option value="No internet service">No internet service</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>DeviceProtection</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="DeviceProtection">
-                                        <option value="No">No internet service</option>
-                                        <option value="Yes">DeviceProtection_Yes</option>
-                                        <option value="No internet service">No</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>TechSupport</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="TechSupport">
-                                        <option value="No internet service">No internet service</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>StreamingTV</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="StreamingTV">
-                                        <option value="No internet service">No Internet service</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>StreamingMovies</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="StreamingMovies">
-                                        <option value="No internet service">No Internet service</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>Contract</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="Contract">
-                                        <option value="Month-to-month">Month-to-month</option>
-                                        <option value="Two year">Two year</option>
-                                        <option value="One year">One year</option>
-                                    </select></td>
-
-                                <td class="col-label"><label>PaperlessBilling</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="PaperlessBilling">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select></td>
-                            </tr>
-
-                            <tr>
-                                <td class="col-label"><label>PaymentMethod</label></td>
-                                <td class="col-input">
-                                    <select class="custom-select" name="PaymentMethod">
-                                        <option value="Electronic check">Electronic check</option>
-                                        <option value="Mailed check">Mailed check</option>
-                                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
-                                        <option value="Credit card (automatic)">Credit card (automatic)</option>
-                                    </select></td>
-                            </tr>
-
+                            
                             <tr class="form_wrapper">
-                                <td colspan='2'><input type="submit" value="Prever CHURN"/></td>
+                                <td colspan='2'><input type="submit" value="CLASSIFICAR"/></td>
                             </tr>
                         </table>
 
