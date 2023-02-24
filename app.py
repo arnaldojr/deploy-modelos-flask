@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 from flask import Flask, render_template, request
 
-# molezinha, só tem que setar as pastas de template e assets
+# Ajuste das pastas de template e assets
 app = Flask(__name__, template_folder='template', static_folder='template/assets')
 
 # Import do modelo já treinado e salvo (essa parte foi feita no jupyter notebook)
@@ -36,7 +36,7 @@ def get_data():
 ## Pagina com o resultado predito pelo modelo ML 
 @app.route('/send', methods=['POST'])
 def show_data():
-    
+
     try:
         df = get_data()
         df = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
