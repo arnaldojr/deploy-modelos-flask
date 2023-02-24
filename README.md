@@ -20,5 +20,5 @@ Template de paginas web grátis
 
 
 
-Git de referência: https://youtu.be/_KNzvVsrB8k
+Git de referência: https://github.com/letsdata/deploy-modelos-flask ou https://youtu.be/_KNzvVsrB8k
 
