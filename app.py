@@ -45,7 +45,6 @@ def show_data():
         # Faz a predição com os dados digitados pelo usuario
         prediction = modelo_pipeline.predict(df)
 
-
         if prediction == 'Iris-virginica':
             outcome = 'OPAAAA é uma Iris-virginica!'
             imagem = 'Iris_virginica.jpg'
@@ -55,15 +54,12 @@ def show_data():
         else:
             outcome = 'Eu jurava que não era uma Iris-versicolor!'
             imagem = 'Iris_versicolor.jpg'
-        
-        return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
-                            result=outcome, imagem=imagem)
 
     except ValueError as e:
         outcome = 'OPAAAA você digitou coisa errada! '+str(e).split('\n')[-1].strip()
         imagem = 'flor.png'
     
-        return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
+    return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
                            result=outcome, imagem=imagem)
 
 
