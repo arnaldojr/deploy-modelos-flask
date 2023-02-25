@@ -1,7 +1,8 @@
 import pickle
 
 import pandas as pd
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+import numpy as np
 
 # Ajuste das pastas de template e assets
 app = Flask(__name__, template_folder='template', static_folder='template/assets')
@@ -33,7 +34,7 @@ def get_data():
 
     return pd.DataFrame.from_dict(d_dict, orient='columns')
 
-## Pagina com o resultado predito pelo modelo ML 
+## Renderiza o resultado predito pelo modelo ML na Webpage
 @app.route('/send', methods=['POST'])
 def show_data():
 
@@ -58,12 +59,34 @@ def show_data():
         return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
                             result=outcome, imagem=imagem)
 
-    except:
-        outcome = 'OPAAAA você digitou coisa errada!'
+    except ValueError as e:
+        outcome = 'OPAAAA você digitou coisa errada! '+str(e).split('\n')[-1].strip()
         imagem = 'flor.png'
     
         return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
                            result=outcome, imagem=imagem)
+
+
+# retorna o a predição formatada em JSON para uma solicitação HTTP
+@app.route('/results',methods=['POST'])
+def results():
+
+    data = request.get_json(force=True)
+
+    try:
+         prediction = modelo_pipeline.predict([np.array(list(data.values()))])
+         output = {
+        'status': 200,
+        'prediction': prediction[0]
+        }
+         
+    except ValueError as e:
+        output = {
+        'status': 500,
+        'prediction': str(e).split('\n')[-1].strip()
+        }
+   
+    return jsonify(output)
 
 
 if __name__ == "__main__":

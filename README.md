@@ -1,8 +1,9 @@
 # Exemplo de Deploy para modelos ML utilizando Flask
 
-Este repositório é guia simples para compreender como pode ser feito o deploy de suas aplicações de ML em uma pagina Web.
+Este repositório é guia simples para compreender como pode ser feito o deploy de suas aplicações de ML tanto em uma página com interface Web como uma API. 
 
-Para testar:
+
+Para testar existem 2 formas:
 
 - Clone este repositório;
 - Execute o app.py com flask run 
