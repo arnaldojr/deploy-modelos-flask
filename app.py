@@ -1,5 +1,5 @@
 import pickle
-
+import os
 import pandas as pd
 from flask import Flask, render_template, request, jsonify
 import numpy as np
@@ -86,4 +86,4 @@ def results():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=8000, debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
